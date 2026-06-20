@@ -1,0 +1,28 @@
+{
+  "name": "atividade2",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/vini753/Pratica-2-Web#readme",
+  "bugs": {
+    "url": "https://github.com/vini753/Pratica-2-Web/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vini753/Pratica-2-Web.git"
+  },
+  "license": "ISC",
+  "author": "vinicius",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^10.5.0",
+    "nodemon": "^3.1.14"
+  }
+}
