@@ -1,32 +1,14 @@
-class Potion {
-    constructor(id, name, desc, photo, price) {
-        this.id = id
-        this.name = name
-        this.desc = desc
-        this.photo = photo
-        this.price = price
-    }
-}
+import { Model, DataTypes } from "sequelize";
+import sequelize from "./dbconfig.js";
 
-const potions = [
-    new Potion(1, 'blue sky', 'Essa poção provê', 'https://i.ibb.co/ZzS7xb2/rsz-sky.png', 300),
-    new Potion(2, 'perfume', 'cheirando', 'https://i.ibb.co/pyhZJXf/rsz-lilas.png', 200)
-];
+class Potion extends Model {};
 
-function findAll() {
-    return potions;
-}
+Potion.init({
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.STRING, allowNull: false },
+    description: { type: DataTypes.STRING, allowNull: false },
+    photo: { type: DataTypes.STRING, allowNull: false },
+    price: { type: DataTypes.INTEGER, allowNull: false }
+}, {sequelize: sequelize, timestamps: false });
 
-function findOne(id) {
-    const potion = potions.find(p => p.id == id);
-    return potion;
-}
-
-function create(potion) {
-    const id = potions.length + 1;
-    const newPotion = new Potion(id, potion.name, potion.desc, potion.photo, potion.price);
-    potions.push(newPotion);
-    return findOne(id);
-}
-
-export default { findAll, findOne, create }
+export default Potion;
