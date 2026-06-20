@@ -17,7 +17,6 @@ function create(request, response) {
 }
 
 function deleteByPk(request, response) {
-    console.log('aqui');
     model.destroy({
         where: { id: request.params.id}
     }).then( res => response.status(200).send() )

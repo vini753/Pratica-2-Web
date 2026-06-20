@@ -1,6 +1,7 @@
 import express from "express";
 import router from "./routes/api.routes.js";
 import Potion from "./models/potion.model.js";
+import cors from "cors";
 
 try {
     await Potion.sync();
@@ -9,6 +10,8 @@ try {
 }
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
