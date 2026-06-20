@@ -16,4 +16,12 @@ function create(request, response) {
     .catch( e => response.status(500).send(e) );
 }
 
-export default { findAll, create };
+function deleteByPk(request, response) {
+    console.log('aqui');
+    model.destroy({
+        where: { id: request.params.id}
+    }).then( res => response.status(200).send() )
+    .catch( e => response.status(404).send(e) );
+}
+
+export default { findAll, create, deleteByPk };
