@@ -2,9 +2,10 @@ import Potion from "./Potion.jsx";
 import potionsApi from "../api/potions.api.js";
 import { useEffect, useState } from "react";
 import PotionForm from "./PotionForm.jsx";
+import "./Potion.css";
 
 
-export default function PotionManager() {
+export default function PotionAdmin() {
     const [potions, setPotions] = useState([]);
 
     useEffect(() => {
@@ -29,24 +30,27 @@ export default function PotionManager() {
     }
 
     return (
-        <div className="potion-manager">
+        <div className="potion-admin">
             <h1>Poções</h1>
 
-            { potions.map(potion => {
-                return (
-                    <Potion
-                        key={potion.id}
-                        id={potion.id}
-                        name={potion.name}
-                        photo={potion.photo}
-                        price={potion.price}
-                        description={potion.description}
-                        deletePotion={deletePotion}
-                    />
-                )
-            })
-            }
+            <div className="potion-list">
+                { potions.map(potion => {
+                    return (
+                        <Potion
+                            key={potion.id}
+                            id={potion.id}
+                            name={potion.name}
+                            photo={potion.photo}
+                            price={potion.price}
+                            description={potion.description}
+                            deletePotion={deletePotion}
+                        />
+                    )
+                })
+                }
+            </div>
 
+            <h1>Adicionar poção</h1>
             <PotionForm addPotion={addPotion}/>
 
         </div>

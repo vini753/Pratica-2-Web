@@ -1,0 +1,10 @@
+.potion-footer {
+    padding-top: 2em;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+h3 {
+    color: darkviolet
+}

@@ -27,7 +27,7 @@ export default function PotionForm(props) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form id="potion-form" onSubmit={handleSubmit}>
             <div>
                 <label>Nome</label>
                 <input type="text" name="name" value={potionData.name} onChange={handleChange}/>
@@ -37,12 +37,12 @@ export default function PotionForm(props) {
                 <input type="text" name="photo" value={potionData.photo} onChange={handleChange}/>
             </div>
             <div>
-                <label>Descrição</label>
-                <input type="text" name="description" value={potionData.description} onChange={handleChange}/>
-            </div>
-            <div>
                 <label>Preço</label>
                 <input type="text" name="price" value={potionData.price} onChange={priceHandleChange}/>
+            </div>
+            <div>
+                <label>Descrição</label>
+                <textarea name="description" value={potionData.description} onChange={handleChange}></textarea>
             </div>
 
             <button type="submit">Adicionar</button>
