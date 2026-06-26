@@ -24,6 +24,6 @@ cd frontend/ && npm install
 npm run dev
 ```
 
-O site estará rodando em http://localhost:5173
+O site poderá ser acessado em http://localhost:5173
 
 Aluno: Vinícius Morotti - 15491876
